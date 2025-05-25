@@ -60,3 +60,18 @@ footer a:hover {
 .list-group-item h5 {
     color: #0056b3;
 }
+
+section {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 80px; 
+  }
+}
+@media (max-width: 768px) {
+  section[id] h2 {
+    scroll-margin-top: 100px;
+  }
+}
