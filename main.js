@@ -23,6 +23,14 @@
     if (el) el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
   };
   const openUrl = (u) => window.open(u, '_blank', 'noopener');
+  const downloadResume = () => {
+    const a = document.createElement('a');
+    a.href = 'assets/Rodric_Dib_Resume.pdf';
+    a.download = 'Rodric_Dib_Resume.pdf';
+    document.body.append(a);
+    a.click();
+    a.remove();
+  };
 
   /* ───────────── toast + clipboard ───────────── */
   const toastEl = $('#toast');
@@ -719,6 +727,7 @@
       ['Open Event Attendance App on GitHub', 'Repo', () => openUrl(LINKS.eams)],
       ['Open GitHub profile', 'Link', () => openUrl(LINKS.github)],
       ['Open LinkedIn', 'Link', () => openUrl(LINKS.linkedin)],
+      ['Download résumé (PDF)', 'File', downloadResume],
       ['Copy email address', 'Action', copyEmail],
       ['Switch light / dark theme', 'Action', toggleTheme],
     ];
