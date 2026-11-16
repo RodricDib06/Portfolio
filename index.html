@@ -1,166 +1,789 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rodric Dib | UX Design Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="styles.css" rel="stylesheet"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rodric Dib — Software Engineer</title>
+  <meta name="description" content="Rodric Dib is a Software Engineering student at the University of Ottawa who builds systems for fun and proves they work: a 13-agent AI sales platform, a 20M orders/sec C++ exchange engine, and a grant-winning accessibility tool.">
+  <meta name="author" content="Rodric Dib">
+  <meta name="theme-color" content="#f3efe6">
+  <link rel="canonical" href="https://rodricdib06.github.io/Portfolio/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rodric Dib — Software Engineer">
+  <meta property="og:description" content="I build systems for fun, then prove they work. A 13-agent AI platform, a 20M orders/sec C++ exchange engine, 1,100+ automated tests.">
+  <meta property="og:url" content="https://rodricdib06.github.io/Portfolio/">
+  <meta property="og:image" content="https://rodricdib06.github.io/Portfolio/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314130f'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-size='27' font-weight='700' text-anchor='middle' fill='%23e4ff4a'%3ERD%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('rd-theme'); } catch (e) {}
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.add('js');
+    })();
+  </script>
 </head>
 <body>
+  <a class="skip" href="#work">Skip to the work</a>
+  <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Rodric Dib</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#how-i-work">How I Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="#case-studies">Case Studies</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        </ul>
+  <!-- ───────────── NAV ───────────── -->
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Rodric Dib, back to top">
+        <span class="brand-mark">RD</span>
+        <span class="brand-name">Rodric Dib</span>
+      </a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#work"><span>01</span>Work</a>
+        <a href="#experience"><span>02</span>Experience</a>
+        <a href="#skills"><span>03</span>Skills</a>
+        <a href="#about"><span>04</span>About</a>
+        <a href="#contact"><span>05</span>Contact</a>
+      </nav>
+      <div class="nav-tools">
+        <button class="tool tool-kbd" id="paletteBtn" type="button" aria-label="Open command menu">
+          <span class="tool-kbd-label">Menu</span><kbd>⌘K</kbd>
+        </button>
+        <button class="tool" id="themeBtn" type="button" aria-label="Switch colour theme">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+        </button>
+        <a class="tool" href="https://github.com/RodricDib06" target="_blank" rel="noopener" aria-label="GitHub profile">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+        </a>
       </div>
     </div>
-  </nav>
-
-  <!-- HEADER -->
-  <header class="bg-dark text-white p-5 text-center">
-    <h1 class="display-4 fw-bold">Rodric Dib</h1>
-    <p class="lead">Bridging Code and Creativity | Software Engineering Student</p>
   </header>
 
-  <!-- ABOUT -->
-  <section class="container my-5" id="about">
-    <h2>About Me</h2>
-    <div class="row align-items-center">
-      <div class="col-md-4 text-center">
-        <img src="Pics/profile.JPG" alt="Rodric Dib" class="img-fluid profile-img shadow"/>
-      </div>
-      <div class="col-md-8">
-        <p>Hello! I'm Rodric Dib, a third-year Software Engineering student at the University of Ottawa. I bring a multidisciplinary background to UX design, combining technical problem-solving with a strong sense of usability and design thinking.</p>
-        <p>During my co-op as a <strong>Junior Technical Analyst</strong> at HOIST, I worked on optimizing ERP workflows using IFS Cloud.</p>
-        <p>Previously, I was a <strong>Cybersecurity Analyst Intern</strong> at Saint Joseph University of Beirut.</p>
-        <p>I’ve also taught piano and music theory for over a year.</p>
-      </div>
+  <!-- ───────────── TICKER ───────────── -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack">
+      <span class="tk"><b>LOB</b>20.0M orders/sec <i class="up">▲ +112%</i></span>
+      <span class="tk"><b>TESTS</b>1,100+ automated <i class="up">▲ passing</i></span>
+      <span class="tk"><b>AGENTS</b>13 in one LangGraph pipeline <i class="up">● live demo</i></span>
+      <span class="tk"><b>GPA</b>3.90 / 4.00 <i class="up">Dean’s List</i></span>
+      <span class="tk"><b>CO-OP</b>4 work terms <i class="up">▲ shipped</i></span>
+      <span class="tk"><b>LATENCY</b>50 ns per order <i class="dn">▼ −53%</i></span>
+      <span class="tk"><b>LANG</b>EN · FR · AR</span>
+      <span class="tk"><b>CLEARANCE</b>Government of Canada · Secret</span>
+      <span class="tk"><b>GRAD</b>Dec 2027</span>
     </div>
-  </section>
+  </div>
 
-  <!-- HOW I WORK -->
-  <section class="bg-light py-5" id="how-i-work">
-    <div class="container">
-      <h2>How I Work</h2>
-      <p>As a software engineering student currently taking a course in user interface design, I’m learning to approach problems with a user-centered mindset. I explore core UX concepts such as <strong>heuristic evaluation</strong> and <strong>design thinking</strong> through guided assignments and interactive projects.</p>
-      <p>My current process focuses on understanding user needs, applying design principles, and improving through feedback and iteration. I refer to established practices in the field and continuously develop my skills as I progress through the course.</p>
-    </div>
-  </section>
+  <main id="top">
 
-  <!-- CASE STUDIES -->
-<section class="container my-5" id="case-studies">
-  <h2>Case Studies</h2>
-  <div class="row g-4">
-    <div class="col-md-6 col-lg-3">
-      <a href="https://anthony0246.github.io/TutorMe/" target="_blank" class="text-decoration-none text-dark">
-        <div class="card h-100 clickable-card">
-          <img src="Pics/tutor-me.png" class="card-img-top" alt="Service Website">
-          <div class="card-body">
-            <h5 class="card-title">Design 1: Service Website</h5>
-            <p class="card-text">TutorMe is a platform that lets students easily book personalized tutoring sessions with their preferred tutor.</p>
+    <!-- ───────────── HERO ───────────── -->
+    <section class="hero">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot"></span>Rodric Dib <i>/</i> Software Engineer <i>/</i> Ottawa, Canada</p>
+          <p class="greeting"><span id="greet" lang="en">Hello,</span></p>
+          <h1>I build systems for fun, then <em class="hl">prove</em> they work.</h1>
+          <p class="lede">
+            Software Engineering student at the University of Ottawa with four work terms behind me.
+            Lately that means a <a href="#p-sdr">13-agent AI sales platform</a>, a
+            <a href="#p-lob">C++ exchange engine</a> matching 20&nbsp;million orders a second, and a
+            <a href="#p-a11y">grant-winning accessibility tool</a>, all backed by 1,100+ automated tests.
+          </p>
+          <div class="cta">
+            <a class="btn btn-primary" href="#work">See the work <span aria-hidden="true">↓</span></a>
+            <a class="btn" href="https://github.com/RodricDib06" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+            <a class="btn" href="https://linkedin.com/in/rodricdib" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a class="btn" href="mailto:rdib062@uottawa.ca">Email</a>
+          </div>
+          <dl class="hero-meta">
+            <div><dt>Now</dt><dd>Building CAR-HMS, a full-stack platform for a hiking club</dd></div>
+            <div><dt>Ships in</dt><dd>TypeScript · React · Python · Kotlin/Java · C++</dd></div>
+            <div><dt>Next</dt><dd>BASc Software Engineering (Co&#8209;op), graduating Dec 2027</dd></div>
+          </dl>
+        </div>
+
+        <!-- Live order book -->
+        <aside class="panel lob" id="lob" aria-label="Interactive order book demo">
+          <header class="panel-head">
+            <span class="panel-id">LOB-01</span>
+            <span class="panel-title">RDIB · simulated market</span>
+            <span class="live"><i></i>LIVE</span>
+          </header>
+
+          <div class="lob-body">
+            <div class="lob-ladder">
+              <div class="lob-cols"><span>Price</span><span>Size</span><span>Depth</span></div>
+              <ol class="lob-rows asks" id="lobAsks" aria-label="Asks"></ol>
+              <div class="lob-spread"><span id="lobSpread">spread —</span><span id="lobMid">mid —</span></div>
+              <ol class="lob-rows bids" id="lobBids" aria-label="Bids"></ol>
+            </div>
+            <div class="lob-side">
+              <div class="lob-last">
+                <small>Last trade</small>
+                <strong id="lobLast">100.00</strong>
+              </div>
+              <div class="lob-counter">
+                <small>Orders processed</small>
+                <span id="lobCount">0</span>
+              </div>
+              <small class="lob-tape-title">Tape</small>
+              <ul class="lob-tape" id="lobTape"></ul>
+            </div>
+          </div>
+
+          <div class="lob-acct" aria-live="polite">
+            <div><small>Your position</small><span id="acPos">0</span></div>
+            <div><small>Avg cost</small><span id="acAvg">—</span></div>
+            <div><small>P&amp;L</small><span id="acPnl">$0.00</span></div>
+            <div><small>Risk status</small><span id="acStatus" class="ok">ACTIVE</span></div>
+          </div>
+
+          <div class="lob-actions">
+            <button type="button" class="lob-btn buy" data-order="B" data-qty="100">Buy 100</button>
+            <button type="button" class="lob-btn sell" data-order="S" data-qty="100">Sell 100</button>
+            <button type="button" class="lob-btn ghost" data-order="B" data-qty="5000" title="Try to send an oversized order">Fat-finger 5,000</button>
+            <button type="button" class="lob-btn warn" id="lobUnblock" hidden>Raise limit &amp; unblock</button>
+          </div>
+
+          <pre class="lob-console" id="lobConsole" aria-live="polite">Order book ready. Place an order: it passes the same risk checks as the real engine.</pre>
+
+          <footer class="panel-foot">
+            A JavaScript miniature of my C++ matching engine: price-time priority, integer-tick prices,
+            pre-trade risk checks, and a kill switch. The real one runs 20,000,000 orders/sec;
+            this one is slowed down so you can watch. <a href="#p-lob">How it works ↓</a>
+          </footer>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ───────────── STATS ───────────── -->
+    <section class="stats" aria-label="Highlights">
+      <div class="wrap stats-grid">
+        <div class="stat reveal"><span class="stat-num"><span data-count="20">20</span>M</span><span class="stat-label">orders / sec</span><span class="stat-note">C++17 matching engine on a single core</span></div>
+        <div class="stat reveal"><span class="stat-num"><span data-count="1100" data-format="comma">1,100</span>+</span><span class="stat-label">automated tests</span><span class="stat-note">pytest, Vitest, GoogleTest, Playwright</span></div>
+        <div class="stat reveal"><span class="stat-num"><span data-count="13">13</span></span><span class="stat-label">AI agents</span><span class="stat-note">orchestrated in one LangGraph pipeline</span></div>
+        <div class="stat reveal"><span class="stat-num"><span data-count="3.9" data-format="dec">3.9</span></span><span class="stat-label">GPA / 4.0</span><span class="stat-note">Dean’s List, University of Ottawa</span></div>
+        <div class="stat reveal"><span class="stat-num"><span data-count="4">4</span></span><span class="stat-label">work terms</span><span class="stat-note">government, enterprise ERP, security</span></div>
+        <div class="stat reveal"><span class="stat-num"><span data-count="3">3</span></span><span class="stat-label">languages</span><span class="stat-note">English · Français · <span lang="ar">العربية</span></span></div>
+      </div>
+    </section>
+
+    <!-- ───────────── WORK ───────────── -->
+    <section class="section" id="work">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-no">§ 01</span>
+          <h2>Selected work</h2>
+          <p>Five builds, from a C++ hot path to a 13-agent pipeline. Two of them run right here on the page.</p>
+        </header>
+
+        <!-- 01 · AutonomousSDR -->
+        <article class="project" id="p-sdr">
+          <header class="project-head reveal">
+            <span class="project-no">01</span>
+            <div class="project-title">
+              <h3>AutonomousSDR</h3>
+              <p>A multi-agent AI sales platform that researches, qualifies, and routes leads on its own, and shows its receipts.</p>
+            </div>
+            <ul class="project-meta">
+              <li><small>Role</small>Solo build</li>
+              <li><small>Year</small>2026</li>
+              <li><small>Status</small><span class="status-live">Live demo</span></li>
+            </ul>
+          </header>
+
+          <div class="project-grid">
+            <div class="project-copy reveal">
+              <ul class="bullets">
+                <li>A LangGraph pipeline of <b>13 AI agents</b> researches, qualifies, and routes leads arriving from <b>6 channels</b>.</li>
+                <li><b>Fact-checks every claim</b> in an AI-written email against its source before it can send. Anything the model invented gets flagged for a human.</li>
+                <li><b>Self-tuning lead scoring</b>: weights rebalance from real conversion outcomes, with chi-square A/B testing on outreach.</li>
+                <li>Secure multi-tenant REST APIs (JWT + RBAC), a Redis job queue, Docker, and <b>1,100+ tests</b> (641 backend, 508 frontend) in CI/CD.</li>
+              </ul>
+
+              <div class="roster">
+                <h4>The 13 agents</h4>
+                <ol>
+                  <li>Orchestrator</li><li>Enrichment</li><li>Research (ReAct)</li><li>Analysis (BANT)</li>
+                  <li>Validator</li><li>Debate</li><li>Email judge</li><li>Outreach</li><li>Booking</li>
+                  <li>Conversational</li><li>Objection handler</li><li>Pre-call brief</li><li>Campaign manager</li>
+                </ol>
+              </div>
+
+              <ul class="chips" aria-label="Tech stack">
+                <li>Python</li><li>LangGraph</li><li>FastAPI</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>pgvector</li><li>Redis</li><li>Docker</li><li>pytest</li><li>Vitest</li>
+              </ul>
+              <div class="links">
+                <a class="btn btn-primary" href="https://github.com/RodricDib06/autonomous-sdr" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+                <a class="btn" href="https://autonomoussdr-web.onrender.com" target="_blank" rel="noopener">Live demo <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+
+            <div class="project-visual reveal">
+              <div class="panel pipe" id="pipe">
+                <header class="panel-head">
+                  <span class="panel-id">SDR-01</span>
+                  <span class="panel-title">lead pipeline · sample data</span>
+                  <button class="panel-btn" id="pipeRun" type="button">▶ Run a lead</button>
+                </header>
+                <div class="pipe-body">
+                  <div class="pipe-col">
+                    <h4>6 channels in</h4>
+                    <ul class="pipe-list" id="pipeIn">
+                      <li>Website form</li><li>Marketing ads</li><li>Inbound email</li>
+                      <li>LinkedIn signal</li><li>Event / conference</li><li>Universal webhook</li>
+                    </ul>
+                  </div>
+                  <div class="pipe-col">
+                    <h4>LangGraph state machine</h4>
+                    <ol class="pipe-list pipe-nodes" id="pipeNodes">
+                      <li data-node="orchestrate">orchestrate</li>
+                      <li data-node="enrich">enrich</li>
+                      <li data-node="research">research</li>
+                      <li data-node="score_intent">score_intent</li>
+                      <li data-node="analyse">analyse</li>
+                      <li data-node="validate">validate</li>
+                    </ol>
+                  </div>
+                  <div class="pipe-col">
+                    <h4>Routed by verdict</h4>
+                    <ul class="pipe-list pipe-out" id="pipeOut">
+                      <li data-verdict="hot"><b>HOT</b>Booking</li>
+                      <li data-verdict="warm"><b>WARM</b>Outreach · A/B</li>
+                      <li data-verdict="cold"><b>COLD</b>CRM sync</li>
+                    </ul>
+                  </div>
+                </div>
+                <pre class="pipe-log" id="pipeLog" aria-live="polite">Press “Run a lead” to push a sample lead through the graph.</pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="shots reveal">
+            <button class="shot" type="button" data-full="assets/img/sdr-approvals-fact-check.jpg" data-caption="Approval queue: every claim in an AI-written email is traced to its source. Unsupported claims are flagged before sending.">
+              <img src="assets/img/sdr-approvals-fact-check.jpg" alt="AutonomousSDR approval queue with a fact-check panel showing two verified claims and one flagged claim" loading="lazy" width="1800" height="1125">
+              <span><b>Fact check</b>Every claim traced to a source</span>
+            </button>
+            <button class="shot" type="button" data-full="assets/img/sdr-campaign-agent.jpg" data-caption="Campaign agent: reads its own metrics, diagnoses why it is behind pace, and proposes strategy changes for approval.">
+              <img src="assets/img/sdr-campaign-agent.jpg" alt="AutonomousSDR campaigns page showing pace against quota and a pending agent plan" loading="lazy" width="1800" height="1125">
+              <span><b>Campaign agent</b>Plans against a quota, explains itself</span>
+            </button>
+            <button class="shot" type="button" data-full="assets/img/sdr-pipeline.jpg" data-caption="Pipeline: per-lead execution traces with per-node status and timing, streamed live over SSE.">
+              <img src="assets/img/sdr-pipeline.jpg" alt="AutonomousSDR pipeline page showing the LangGraph state machine and a per-lead execution log" loading="lazy" width="1800" height="1125">
+              <span><b>Pipeline</b>Per-node traces, streamed live</span>
+            </button>
+            <button class="shot" type="button" data-full="assets/img/sdr-backtest-calibration.jpg" data-caption="Backtest: last quarter's closed-won/lost export is re-scored, reporting recall, precision, lift, and calibration.">
+              <img src="assets/img/sdr-backtest-calibration.jpg" alt="AutonomousSDR backtest calibration report with recall, precision, and lift" loading="lazy" width="1800" height="1125">
+              <span><b>Backtest</b>Scored against what actually closed</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- 02 · Limit Order Book -->
+        <article class="project" id="p-lob">
+          <header class="project-head reveal">
+            <span class="project-no">02</span>
+            <div class="project-title">
+              <h3>Limit Order Book &amp; Real-Time Risk Engine</h3>
+              <p>The core of a stock exchange in C++17, with a risk layer that can stop a losing trader in O(log n).</p>
+            </div>
+            <ul class="project-meta">
+              <li><small>Role</small>Solo build</li>
+              <li><small>Year</small>2026</li>
+              <li><small>Status</small>116 tests, CI green</li>
+            </ul>
+          </header>
+
+          <div class="project-grid">
+            <div class="project-copy reveal">
+              <ul class="bullets">
+                <li>Price-time priority matching with <b>7 pre-trade risk checks</b>, live P&amp;L for every account, and a loss-limit kill switch.</li>
+                <li>Removed hot-path allocations with a pooled intrusive list: <b>9.4M → 20M orders/sec (+112%)</b>, 50 ns per order.</li>
+                <li>Loss limits become <b>trigger prices</b> in two ordered maps, so a price move only visits the accounts it breaches instead of scanning all of them.</li>
+                <li><b>116 tests</b> on GCC and Clang with AddressSanitizer + UBSan in CI. Invariants are re-checked after every single operation.</li>
+              </ul>
+
+              <div class="roster checks">
+                <h4>The 7 pre-trade checks</h4>
+                <ol>
+                  <li>Max order quantity</li><li>Max order value</li><li>Price band</li><li>Position limit</li>
+                  <li>Credit limit</li><li>Self-trade prevention</li><li>Kill switch</li>
+                </ol>
+              </div>
+
+              <ul class="chips" aria-label="Tech stack">
+                <li>C++17</li><li>CMake</li><li>GoogleTest</li><li>GitHub Actions</li><li>ASan / UBSan</li><li>Linux</li>
+              </ul>
+              <div class="links">
+                <a class="btn btn-primary" href="https://github.com/RodricDib06/limit-order-book" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+                <a class="btn" href="#lob">Try the live demo <span aria-hidden="true">↑</span></a>
+              </div>
+            </div>
+
+            <div class="project-visual stack reveal">
+              <div class="panel bench" id="bench">
+                <header class="panel-head">
+                  <span class="panel-id">BENCH</span>
+                  <span class="panel-title">1,000,000 orders · Apple M2 · median of 5</span>
+                </header>
+                <ol class="bars">
+                  <li style="--v:47%"><span class="bar-label">Baseline · <code>std::list</code> per level</span><span class="bar"><i></i></span><span class="bar-val">9.4 M/s</span></li>
+                  <li style="--v:69%"><span class="bar-label">+ <code>reserve()</code> the order index</span><span class="bar"><i></i></span><span class="bar-val">13.8 M/s</span></li>
+                  <li style="--v:77%"><span class="bar-label">+ reuse one trade buffer</span><span class="bar"><i></i></span><span class="bar-val">15.4 M/s</span></li>
+                  <li style="--v:100%" class="best"><span class="bar-label">+ pooled intrusive list</span><span class="bar"><i></i></span><span class="bar-val">20.0 M/s</span></li>
+                </ol>
+                <p class="bench-note"><b>+112%</b> over baseline · 50 ns per order · 8.2 M/s with every risk check enabled</p>
+              </div>
+
+              <div class="panel term" id="term">
+                <header class="panel-head">
+                  <span class="panel-id">TTY</span>
+                  <span class="panel-title">./build/orderbook data/risk_demo.csv</span>
+                  <button class="panel-btn" id="termReplay" type="button">↻ Replay</button>
+                </header>
+                <pre class="term-out" id="termOut" aria-label="Recorded output of the risk demo"></pre>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03–05 -->
+        <div class="cards">
+          <article class="card reveal" id="p-a11y">
+            <div class="card-visual shot-frame">
+              <img src="assets/img/chatbot.jpg" alt="The accessibility chatbot's home screen with suggested prompts about course issues" loading="lazy" width="1400" height="706">
+              <span class="ribbon">Grant winner</span>
+            </div>
+            <div class="card-body">
+              <p class="card-no">03 <i>/</i> 2024 <i>/</i> Team lead, 5 people</p>
+              <h3>Chatbot Accessibility Tool</h3>
+              <p>Led a five-person team that <b>won a grant</b> for a chatbot helping faculty make their Canvas courses accessible. I built the chat UI and a Flask backend that scores course files on <b>38 accessibility criteria</b> and ranks the worst offenders first.</p>
+              <ul class="chips"><li>JavaScript</li><li>Python</li><li>Flask</li><li>OpenAI GPT-4o mini</li></ul>
+              <a class="text-link" href="https://github.com/anthony0246/LMS_TOOL" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="card reveal" id="p-hms">
+            <div class="card-visual art art-topo" aria-hidden="true">
+              <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
+                <g fill="none" stroke="currentColor" stroke-width="1" opacity=".5">
+                  <path d="M-10 210 C 60 190, 110 150, 170 160 S 290 220, 410 170"/>
+                  <path d="M-10 185 C 60 160, 120 115, 180 128 S 300 190, 410 140"/>
+                  <path d="M-10 160 C 70 130, 125 82, 190 98 S 300 160, 410 108"/>
+                  <path d="M40 135 C 90 100, 140 52, 200 70 S 290 128, 360 96"/>
+                  <path d="M95 112 C 130 80, 165 40, 208 52 S 262 96, 300 82"/>
+                  <path d="M150 86 C 170 62, 190 36, 214 42 S 240 70, 252 66"/>
+                </g>
+                <path class="trail" d="M30 222 C 80 200, 96 170, 138 160 S 170 110, 205 96 S 216 60, 214 44" fill="none" stroke-width="2.2" stroke-dasharray="5 6" stroke-linecap="round"/>
+                <g class="pins">
+                  <circle cx="30" cy="222" r="5"/><circle cx="138" cy="160" r="5"/><circle cx="205" cy="96" r="5"/><circle cx="214" cy="44" r="6.5"/>
+                </g>
+                <g class="pin-labels" font-size="10">
+                  <text x="42" y="236">Beginner</text><text x="150" y="174">Intermediate</text><text x="217" y="108">Advanced</text><text x="226" y="42">Summit</text>
+                </g>
+              </svg>
+              <span class="ribbon ribbon-quiet">In progress</span>
+            </div>
+            <div class="card-body">
+              <p class="card-no">04 <i>/</i> 2026 <i>/</i> Full stack</p>
+              <h3>CAR-HMS: Hiking Event Management</h3>
+              <p>A full-stack web app for a hiking club: a <b>Kotlin / Spring Boot</b> REST API behind an <b>Angular</b> front end, with role-based access, authentication, and business rules that match hikers to hikes by skill level and capacity.</p>
+              <ul class="chips"><li>Kotlin</li><li>Spring Boot</li><li>Angular</li><li>TypeScript</li><li>Gradle</li></ul>
+              <span class="text-link muted">In development · source not public yet</span>
+            </div>
+          </article>
+
+          <article class="card reveal" id="p-eams">
+            <div class="card-visual art art-phone" aria-hidden="true">
+              <div class="phone">
+                <div class="phone-bar"><span>Events</span><i></i></div>
+                <ul>
+                  <li><b>Registered</b><span>Request sent</span><em class="p1">●</em></li>
+                  <li><b>Approved</b><span>By organizer</span><em class="p2">●</em></li>
+                  <li><b>Attended</b><span>Checked in</span><em class="p3">✓</em></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-no">05 <i>/</i> 2024 <i>/</i> Team of 4</p>
+              <h3>Event Attendance Management App</h3>
+              <p>A <b>role-based Android app</b> built in a four-person team for event registration, approvals, and attendance tracking, backed by Firebase.</p>
+              <ul class="chips"><li>Java</li><li>Android Studio</li><li>Gradle</li><li>Firebase</li></ul>
+              <a class="text-link" href="https://github.com/uOttawaSEG/Event-Attendance-Management-System-EAMS-App" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Archive -->
+        <div class="archive" id="archive">
+          <header class="archive-head reveal">
+            <h3>Earlier builds</h3>
+            <p>Front-end and algorithm projects from 2024–2025.</p>
+          </header>
+          <ul class="index reveal">
+            <li data-img="assets/img/sneakerpulse.jpg">
+              <span class="ix-year">2025</span>
+              <span class="ix-name">SneakerPulse</span>
+              <span class="ix-desc">Bilingual interactive dashboard charting sneaker resale trends across brands</span>
+              <span class="ix-stack">React · Recharts</span>
+              <span class="ix-links"><a href="https://rodricdib06.github.io/SneakerPulse/" target="_blank" rel="noopener">Live ↗</a><a href="https://github.com/RodricDib06/SneakerPulse" target="_blank" rel="noopener">GitHub ↗</a></span>
+            </li>
+            <li data-img="assets/img/ballerz.jpg">
+              <span class="ix-year">2025</span>
+              <span class="ix-name">Ballerz</span>
+              <span class="ix-desc">E-commerce storefront for sports equipment and apparel</span>
+              <span class="ix-stack">React · Bootstrap</span>
+              <span class="ix-links"><a href="https://rodricdib06.github.io/Ballerz/" target="_blank" rel="noopener">Live ↗</a><a href="https://github.com/RodricDib06/Ballerz" target="_blank" rel="noopener">GitHub ↗</a></span>
+            </li>
+            <li data-img="assets/img/tutorme.jpg">
+              <span class="ix-year">2025</span>
+              <span class="ix-name">TutorMe</span>
+              <span class="ix-desc">Booking site for personalised tutoring sessions, built with a teammate</span>
+              <span class="ix-stack">React · React Router</span>
+              <span class="ix-links"><a href="https://anthony0246.github.io/TutorMe/" target="_blank" rel="noopener">Live ↗</a><a href="https://github.com/anthony0246/TutorMe" target="_blank" rel="noopener">GitHub ↗</a></span>
+            </li>
+            <li data-img="assets/img/combinenumbers.jpg">
+              <span class="ix-year">2025</span>
+              <span class="ix-name">Combine Numbers</span>
+              <span class="ix-desc">Memory and math card game with modes and difficulty levels, built with a teammate</span>
+              <span class="ix-stack">React · Bootstrap</span>
+              <span class="ix-links"><a href="https://anthony0246.github.io/CombineNumbers/" target="_blank" rel="noopener">Live ↗</a><a href="https://github.com/anthony0246/CombineNumbers" target="_blank" rel="noopener">GitHub ↗</a></span>
+            </li>
+            <li>
+              <span class="ix-year">2024</span>
+              <span class="ix-name">Friend Recommendation</span>
+              <span class="ix-desc">Recommends friends from mutual connections across social-network graph datasets</span>
+              <span class="ix-stack">Python</span>
+              <span class="ix-links"><a href="https://github.com/RodricDib06/Python_Project" target="_blank" rel="noopener">GitHub ↗</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── EXPERIENCE ───────────── -->
+    <section class="section" id="experience">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-no">§ 02</span>
+          <h2>Experience</h2>
+          <p>Four work terms across government software, enterprise ERP, and security operations.</p>
+        </header>
+
+        <ol class="timeline">
+          <li class="job reveal">
+            <div class="job-when">
+              <time>May – Aug 2026</time>
+              <span>Ottawa, ON</span>
+              <span class="job-tag">Co-op</span>
+            </div>
+            <div class="job-body">
+              <h3>Software Developer &amp; QA Co-op</h3>
+              <p class="job-org">Global Affairs Canada <i>·</i> Government of Canada</p>
+              <ul class="bullets">
+                <li>Shipped <b>10 features</b> in C#/.NET, TypeScript, JavaScript, and CSHTML for NEXCOL, a security-sensitive export-control system used by thousands of exporters, importers, and government users.</li>
+                <li>Built <b>30+ end-to-end test files</b> in Playwright, catching regressions before each release.</li>
+                <li>Debugged and fixed <b>15+ defects</b> across the front-end, business-logic, and SQL Server layers through root-cause analysis.</li>
+                <li>Worked in Agile sprints in Azure DevOps: planned and tracked work, and validated fixes with regression testing.</li>
+              </ul>
+              <ul class="chips"><li>C#</li><li>.NET</li><li>TypeScript</li><li>Playwright</li><li>SQL Server</li><li>Azure DevOps</li></ul>
+            </div>
+            <div class="job-metrics">
+              <div><b>10</b><span>features shipped</span></div>
+              <div><b>30+</b><span>E2E test files</span></div>
+              <div><b>15+</b><span>defects fixed</span></div>
+            </div>
+          </li>
+
+          <li class="job reveal">
+            <div class="job-when">
+              <time>Jan – Dec 2025</time>
+              <span>Ottawa, ON</span>
+              <span class="job-tag">2 co-op terms</span>
+            </div>
+            <div class="job-body">
+              <h3>Junior Technical Analyst</h3>
+              <p class="job-org">Hoist Tech</p>
+              <ul class="bullets">
+                <li><b>Automated 10 manual processes</b> with JavaScript, building custom projections and buttons in IFS Configuration.</li>
+                <li>Built SQL reports on IFS Cloud ERP data, improving data accuracy and supporting process optimization.</li>
+                <li>Migrated and cleaned client data into IFS Cloud, and tested configurations and version upgrades before release.</li>
+              </ul>
+              <ul class="chips"><li>JavaScript</li><li>SQL</li><li>IFS Cloud ERP</li><li>Data migration</li></ul>
+            </div>
+            <div class="job-metrics">
+              <div><b>10</b><span>processes automated</span></div>
+              <div><b>2</b><span>consecutive terms</span></div>
+            </div>
+          </li>
+
+          <li class="job reveal">
+            <div class="job-when">
+              <time>May – Aug 2024</time>
+              <span>Beirut, Lebanon</span>
+              <span class="job-tag">Internship</span>
+            </div>
+            <div class="job-body">
+              <h3>Cybersecurity Intern</h3>
+              <p class="job-org">Saint Joseph University of Beirut</p>
+              <ul class="bullets">
+                <li>Triaged SIEM/XDR alerts in the SOC, cutting incident response time by <b>20%</b> and mitigating <b>20+ critical threats</b>.</li>
+                <li>Streamlined security operations with Microsoft 365 Security and ITSM tools, improving team efficiency by <b>25%</b>.</li>
+                <li>Wrote incident reports and response playbooks documenting threats, root causes, and remediation steps.</li>
+              </ul>
+              <ul class="chips"><li>SIEM / XDR</li><li>Microsoft 365 Security</li><li>ITSM</li><li>Incident response</li></ul>
+            </div>
+            <div class="job-metrics">
+              <div><b>−20%</b><span>incident response time</span></div>
+              <div><b>20+</b><span>critical threats mitigated</span></div>
+              <div><b>+25%</b><span>team efficiency</span></div>
+            </div>
+          </li>
+        </ol>
+
+        <div class="edu reveal">
+          <div class="edu-main">
+            <span class="panel-id light">Education</span>
+            <h3>University of Ottawa</h3>
+            <p>Bachelor of Applied Science in Software Engineering (Co&#8209;op)</p>
+            <p class="edu-when">Sep 2023 – Dec 2027 · Ottawa, ON</p>
+          </div>
+          <div class="edu-stats">
+            <div><b>3.9<small>/4.0</small></b><span>GPA</span></div>
+            <div><b>Dean’s</b><span>List</span></div>
+          </div>
+          <div class="edu-courses">
+            <small>Relevant coursework</small>
+            <ul class="chips"><li>Data Structures</li><li>Algorithms</li><li>Software Architecture</li><li>Database Systems</li><li>Artificial Intelligence</li></ul>
           </div>
         </div>
-      </a>
+      </div>
+    </section>
+
+    <!-- ───────────── SKILLS ───────────── -->
+    <section class="section" id="skills">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-no">§ 03</span>
+          <h2>Technical skills</h2>
+          <p>The whole toolbox. Select any skill to see where I’ve actually shipped it.</p>
+        </header>
+
+        <div class="skills-grid">
+          <div class="skills-cats" id="skillCats">
+            <div class="cat reveal">
+              <h3>Languages</h3>
+              <ul class="skill-list">
+                <li><button class="skill" type="button">TypeScript</button></li>
+                <li><button class="skill" type="button">JavaScript</button></li>
+                <li><button class="skill" type="button">Python</button></li>
+                <li><button class="skill" type="button">Java</button></li>
+                <li><button class="skill" type="button">Kotlin</button></li>
+                <li><button class="skill" type="button">C++</button></li>
+                <li><button class="skill" type="button">C#</button></li>
+                <li><button class="skill" type="button">SQL</button></li>
+                <li><button class="skill" type="button">Bash</button></li>
+                <li><button class="skill" type="button">Assembly</button></li>
+                <li><button class="skill" type="button">HTML/CSS</button></li>
+              </ul>
+            </div>
+            <div class="cat reveal">
+              <h3>Frameworks</h3>
+              <ul class="skill-list">
+                <li><button class="skill" type="button">React</button></li>
+                <li><button class="skill" type="button">Next.js</button></li>
+                <li><button class="skill" type="button">Angular</button></li>
+                <li><button class="skill" type="button">Node.js</button></li>
+                <li><button class="skill" type="button">Spring Boot</button></li>
+                <li><button class="skill" type="button">FastAPI</button></li>
+                <li><button class="skill" type="button">Flask</button></li>
+                <li><button class="skill" type="button">.NET</button></li>
+                <li><button class="skill" type="button">Android SDK</button></li>
+                <li><button class="skill" type="button">LangGraph</button></li>
+              </ul>
+            </div>
+            <div class="cat reveal">
+              <h3>Data &amp; Infra</h3>
+              <ul class="skill-list">
+                <li><button class="skill" type="button">PostgreSQL</button></li>
+                <li><button class="skill" type="button">SQL Server</button></li>
+                <li><button class="skill" type="button">Redis</button></li>
+                <li><button class="skill" type="button">Firebase</button></li>
+                <li><button class="skill" type="button">pgvector</button></li>
+                <li><button class="skill" type="button">Docker</button></li>
+                <li><button class="skill" type="button">Linux</button></li>
+                <li><button class="skill" type="button">AWS</button></li>
+                <li><button class="skill" type="button">REST APIs</button></li>
+                <li><button class="skill" type="button">OAuth2/JWT</button></li>
+              </ul>
+            </div>
+            <div class="cat reveal">
+              <h3>Dev tools</h3>
+              <ul class="skill-list">
+                <li><button class="skill" type="button">Git</button></li>
+                <li><button class="skill" type="button">GitHub Actions</button></li>
+                <li><button class="skill" type="button">Jenkins</button></li>
+                <li><button class="skill" type="button">Azure DevOps</button></li>
+                <li><button class="skill" type="button">CI/CD</button></li>
+                <li><button class="skill" type="button">Gradle</button></li>
+                <li><button class="skill" type="button">CMake</button></li>
+                <li><button class="skill" type="button">GDB</button></li>
+                <li><button class="skill" type="button">Agile/Scrum</button></li>
+              </ul>
+            </div>
+            <div class="cat reveal">
+              <h3>Testing &amp; AI</h3>
+              <ul class="skill-list">
+                <li><button class="skill" type="button">Playwright</button></li>
+                <li><button class="skill" type="button">pytest</button></li>
+                <li><button class="skill" type="button">Vitest</button></li>
+                <li><button class="skill" type="button">GoogleTest</button></li>
+                <li><button class="skill" type="button">JUnit</button></li>
+                <li><button class="skill" type="button">LLM APIs (OpenAI)</button></li>
+                <li><button class="skill" type="button">AI Agents</button></li>
+                <li><button class="skill" type="button">AI Coding Tools</button></li>
+              </ul>
+            </div>
+            <div class="cat reveal">
+              <h3>Libraries &amp; observability</h3>
+              <ul class="skill-list">
+                <li><button class="skill" type="button">Tailwind CSS</button></li>
+                <li><button class="skill" type="button">Vite</button></li>
+                <li><button class="skill" type="button">TanStack Query</button></li>
+                <li><button class="skill" type="button">Recharts</button></li>
+                <li><button class="skill" type="button">Bootstrap</button></li>
+                <li><button class="skill" type="button">SQLAlchemy</button></li>
+                <li><button class="skill" type="button">Alembic</button></li>
+                <li><button class="skill" type="button">Pydantic</button></li>
+                <li><button class="skill" type="button">Prometheus</button></li>
+                <li><button class="skill" type="button">ASan/UBSan</button></li>
+              </ul>
+            </div>
+            <div class="cat reveal">
+              <h3>Security &amp; enterprise</h3>
+              <ul class="skill-list">
+                <li><button class="skill" type="button">SIEM/XDR</button></li>
+                <li><button class="skill" type="button">Microsoft 365 Security</button></li>
+                <li><button class="skill" type="button">Incident Response</button></li>
+                <li><button class="skill" type="button">ITSM</button></li>
+                <li><button class="skill" type="button">IFS Cloud ERP</button></li>
+                <li><button class="skill" type="button">RBAC</button></li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="panel inspector reveal" id="inspector" aria-live="polite">
+            <header class="panel-head">
+              <span class="panel-id">INSPECT</span>
+              <span class="panel-title">where it shipped</span>
+            </header>
+            <div class="insp-body">
+              <h4 id="inspName">Pick a skill</h4>
+              <p id="inspDesc">Select a skill to see the projects and roles where I’ve used it.</p>
+              <ul id="inspList"></ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── ABOUT ───────────── -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-no">§ 04</span>
+          <h2>About</h2>
+          <p>The person behind the commits.</p>
+        </header>
+
+        <div class="about-grid">
+          <figure class="about-photo reveal">
+            <img src="assets/img/rodric.jpg" alt="Portrait of Rodric Dib" loading="lazy" width="1101" height="1400">
+            <figcaption>Fig. 1 <i>/</i> Rodric Dib</figcaption>
+          </figure>
+
+          <div class="about-copy reveal">
+            <p class="about-lede">I like the whole stack, from a C++ hot path where a single allocation matters to the React screen someone actually uses.</p>
+            <p>I’m a Software Engineering student at the University of Ottawa who builds things for fun and ships them end to end. Four work terms have taught me to care about the unglamorous parts: I’ve shipped features into a security-sensitive Government of Canada system, automated ERP workflows for clients, and triaged live alerts in a security operations centre.</p>
+            <p>That’s why everything I build comes with tests, more than 1,100 of them so far. I use AI coding tools every day, and I work in English, French, and Arabic. Away from the keyboard (the computer one), I’ve spent over a year teaching piano and music theory.</p>
+
+            <dl class="facts">
+              <div><dt>Based in</dt><dd>Ottawa, Ontario</dd></div>
+              <div><dt>Degree</dt><dd>BASc Software Engineering (Co&#8209;op), uOttawa</dd></div>
+              <div><dt>Standing</dt><dd>GPA 3.9 / 4.0 · Dean’s List</dd></div>
+              <div><dt>Graduating</dt><dd>December 2027</dd></div>
+              <div><dt>Clearance</dt><dd>Government of Canada · Secret</dd></div>
+              <div><dt>Languages</dt><dd>English · Français · <span lang="ar">العربية</span></dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── CONTACT ───────────── -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-no">§ 05</span>
+          <h2>Contact</h2>
+          <p>The fastest way to reach me is email.</p>
+        </header>
+        <div class="contact-body reveal">
+          <p class="contact-big">Let’s build something <em class="hl">worth testing.</em></p>
+          <div class="contact-actions">
+            <a class="btn btn-primary btn-lg" href="mailto:rdib062@uottawa.ca">rdib062@uottawa.ca</a>
+            <button class="btn btn-lg" type="button" data-copy="rdib062@uottawa.ca">Copy email</button>
+          </div>
+          <ul class="contact-links">
+            <li><a href="https://linkedin.com/in/rodricdib" target="_blank" rel="noopener"><small>LinkedIn</small>in/rodricdib <span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://github.com/RodricDib06" target="_blank" rel="noopener"><small>GitHub</small>RodricDib06 <span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://autonomoussdr-web.onrender.com" target="_blank" rel="noopener"><small>Live project</small>AutonomousSDR demo <span aria-hidden="true">↗</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 Rodric Dib. Designed and hand-coded in HTML, CSS, and vanilla JavaScript. No frameworks, no build step.</p>
+      <p class="footer-run"><span class="ok">✓</span> 5 sections <span class="ok">✓</span> 1 live order book <span class="ok">✓</span> 0 dependencies</p>
+      <a href="#top" class="text-link">Back to top <span aria-hidden="true">↑</span></a>
     </div>
-
-    <div class="col-md-6 col-lg-3">
-  <a href="https://anthony0246.github.io/CombineNumbers/" target="_blank" class="text-decoration-none text-dark">
-    <div class="card h-100 clickable-card">
-      <img src="Pics/CombineNumbers.png" class="card-img-top" alt="Combine Numbers Game">
-      <div class="card-body">
-        <h5 class="card-title">Design 2: Combine Numbers</h5>
-        <p class="card-text">A memory game where you match cards that add or multiply to a target number. Choose a mode, pick a difficulty, and start matching!.</p>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-    <div class="col-md-6 col-lg-3">
-  <a href="https://rodricdib06.github.io/Ballerz/" target="_blank" class="text-decoration-none text-dark">
-    <div class="card h-100 clickable-card">
-      <img src="Pics/Ballerz.png" class="card-img-top" alt="E-commerce Site">
-      <div class="card-body">
-        <h5 class="card-title">Design 3: Ballerz</h5>
-        <p class="card-text">Ballerz is a sports-focused e-commerce site offering top-quality athletic gear and apparel for every game.</p>
-      </div>
-    </div>
-  </a>
-</div>
-
-
-    <div class="col-md-6 col-lg-3">
-  <a href="https://rodricdib06.github.io/SneakerPulse/" target="_blank" class="text-decoration-none text-dark">
-    <div class="card h-100 clickable-card">
-      <img src="Pics/SneakerPulse.png" class="card-img-top" alt="BI-Dashboard">
-      <div class="card-body">
-        <h5 class="card-title">Design 4: SneakerPulse</h5>
-        <p class="card-text">SneakerPulse is a bilingual interactive dashboard that visualizes and compares sneaker price trends by model, gender, and currency.</p>
-      </div>
-    </div>
-  </a>
-</div>
-</section>
-
-  <!-- PROJECTS -->
-  <section class="bg-light py-5" id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="row align-items-center mb-4">
-        <div class="col-3 col-md-2 text-center">
-          <img src="Pics/android.JPG" alt="EAMS App" class="img-fluid rounded shadow project-img">
-        </div>
-        <div class="col-9 col-md-10">
-          <h5>Event Attendance and Management System | Android Studio</h5>
-          <p>Developed a full-stack Android app with Firebase to manage events and user registration.<br>
-          <a href="https://github.com/uOttawaSEG/Event-Attendance-Management-System-EAMS-App" target="_blank">View on GitHub</a></p>
-        </div>
-      </div>
-      <div class="row align-items-center mb-4">
-        <div class="col-3 col-md-2 text-center">
-          <img src="Pics/chatbot.JPG" alt="ChatBot Tool" class="img-fluid rounded shadow project-img">
-        </div>
-        <div class="col-9 col-md-10">
-          <h5>ChatBot Accessibility Tool | GPT-4o API + UI</h5>
-          <p>Built an accessibility-focused chatbot tool for university courses using GPT-4o and JavaScript.<br>
-          <a href="https://github.com/anthony0246/LMS_TOOL" target="_blank">View on GitHub</a></p>
-        </div>
-      </div>
-      <div class="row align-items-center mb-4">
-        <div class="col-3 col-md-2 text-center">
-          <img src="Pics/friends.JPG" alt="Friend Recommendation Algorithm" class="img-fluid rounded shadow project-img">
-        </div>
-        <div class="col-9 col-md-10">
-          <h5>Friend Recommendation Algorithm | Python</h5>
-          <p>Implemented a social algorithm to recommend friends based on metadata from Facebook datasets.<br>
-          <a href="https://github.com/RodricDib06/Python_Project" target="_blank">View on GitHub</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-dark text-white text-center p-4 mt-5">
-    <p>
-      <a href="mailto:rodricdib@gmail.com" class="text-white">My Email</a> |
-      <a href="https://github.com/RodricDib06" class="text-white" target="_blank">GitHub</a> |
-      <a href="https://www.linkedin.com/in/rodricdib/" class="text-white" target="_blank">LinkedIn</a> |
-      <a href="../Portfolio/Pics/RodricDib_Resume.pdf" target="_blank" class="text-white">Resume</a></p>
-    </p>
-    <p class="mb-0">© 2025 Rodric Dib</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Command palette -->
+  <dialog class="palette" id="palette" aria-label="Command menu">
+    <div class="palette-box">
+      <div class="palette-input">
+        <span aria-hidden="true">›</span>
+        <input id="paletteInput" type="text" placeholder="Jump to a section, open a repo, copy my email…" autocomplete="off" spellcheck="false" aria-label="Search commands">
+        <kbd>esc</kbd>
+      </div>
+      <ul class="palette-list" id="paletteList" role="listbox"></ul>
+      <div class="palette-foot"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> run</span></div>
+    </div>
+  </dialog>
+
+  <!-- Lightbox -->
+  <dialog class="lightbox" id="lightbox" aria-label="Screenshot viewer">
+    <figure>
+      <img id="lightboxImg" src="" alt="">
+      <figcaption id="lightboxCap"></figcaption>
+    </figure>
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">✕</button>
+  </dialog>
+
+  <div class="ix-preview" id="ixPreview" aria-hidden="true"><img alt="" src=""></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="main.js" defer></script>
 </body>
 </html>
