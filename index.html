@@ -34,7 +34,7 @@
   </script>
 </head>
 <body>
-  <a class="skip" href="#work">Skip to the work</a>
+  <a class="skip" href="#experience">Skip to content</a>
   <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
 
   <!-- ───────────── NAV ───────────── -->
@@ -45,8 +45,8 @@
         <span class="brand-name">Rodric Dib</span>
       </a>
       <nav class="nav-links" aria-label="Sections">
-        <a href="#work"><span>01</span>Work</a>
-        <a href="#experience"><span>02</span>Experience</a>
+        <a href="#experience"><span>01</span>Experience</a>
+        <a href="#projects"><span>02</span>Projects</a>
         <a href="#skills"><span>03</span>Skills</a>
         <a href="#about"><span>04</span>About</a>
         <a href="#contact"><span>05</span>Contact</a>
@@ -98,7 +98,7 @@
             <a href="#p-a11y">grant-winning accessibility tool</a>, all backed by 1,100+ automated tests.
           </p>
           <div class="cta">
-            <a class="btn btn-primary" href="#work">See the work <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-primary" href="#projects">See the projects <span aria-hidden="true">↓</span></a>
             <a class="btn" href="assets/Rodric_Dib_Resume.pdf" download="Rodric_Dib_Resume.pdf">Résumé <span aria-hidden="true">↓</span></a>
             <a class="btn" href="https://github.com/RodricDib06" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
             <a class="btn" href="https://linkedin.com/in/rodricdib" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
@@ -177,12 +177,111 @@
       </div>
     </section>
 
-    <!-- ───────────── WORK ───────────── -->
-    <section class="section" id="work">
+    <!-- ───────────── EXPERIENCE ───────────── -->
+    <section class="section" id="experience">
       <div class="wrap">
         <header class="sec-head reveal">
           <span class="sec-no">§ 01</span>
-          <h2>Selected work</h2>
+          <h2>Experience</h2>
+          <p>Four work terms across government software, enterprise ERP, and security operations.</p>
+        </header>
+
+        <ol class="timeline">
+          <li class="job reveal">
+            <div class="job-when">
+              <time>May – Aug 2026</time>
+              <span>Ottawa, ON</span>
+              <span class="job-tag">Co-op</span>
+            </div>
+            <div class="job-body">
+              <h3>Software Developer &amp; QA Co-op</h3>
+              <p class="job-org">Global Affairs Canada <i>·</i> Government of Canada</p>
+              <ul class="bullets">
+                <li>Shipped <b>10 features</b> in C#/.NET, TypeScript, JavaScript, and CSHTML for NEXCOL, a security-sensitive export-control system used by thousands of exporters, importers, and government users.</li>
+                <li>Built <b>30+ end-to-end test files</b> in Playwright, catching regressions before each release.</li>
+                <li>Debugged and fixed <b>15+ defects</b> across the front-end, business-logic, and SQL Server layers through root-cause analysis.</li>
+                <li>Worked in Agile sprints in Azure DevOps: planned and tracked work, and validated fixes with regression testing.</li>
+              </ul>
+              <ul class="chips"><li>C#</li><li>.NET</li><li>TypeScript</li><li>Playwright</li><li>SQL Server</li><li>Azure DevOps</li></ul>
+            </div>
+            <div class="job-metrics">
+              <div><b>10</b><span>features shipped</span></div>
+              <div><b>30+</b><span>E2E test files</span></div>
+              <div><b>15+</b><span>defects fixed</span></div>
+            </div>
+          </li>
+
+          <li class="job reveal">
+            <div class="job-when">
+              <time>Jan – Dec 2025</time>
+              <span>Ottawa, ON</span>
+              <span class="job-tag">2 co-op terms</span>
+            </div>
+            <div class="job-body">
+              <h3>Junior Technical Analyst</h3>
+              <p class="job-org">Hoist Tech</p>
+              <ul class="bullets">
+                <li><b>Automated 10 manual processes</b> with JavaScript, building custom projections and buttons in IFS Configuration.</li>
+                <li>Built SQL reports on IFS Cloud ERP data, improving data accuracy and supporting process optimization.</li>
+                <li>Migrated and cleaned client data into IFS Cloud, and tested configurations and version upgrades before release.</li>
+              </ul>
+              <ul class="chips"><li>JavaScript</li><li>SQL</li><li>IFS Cloud ERP</li><li>Data migration</li></ul>
+            </div>
+            <div class="job-metrics">
+              <div><b>10</b><span>processes automated</span></div>
+              <div><b>2</b><span>consecutive terms</span></div>
+            </div>
+          </li>
+
+          <li class="job reveal">
+            <div class="job-when">
+              <time>May – Aug 2024</time>
+              <span>Beirut, Lebanon</span>
+              <span class="job-tag">Internship</span>
+            </div>
+            <div class="job-body">
+              <h3>Cybersecurity Intern</h3>
+              <p class="job-org">Saint Joseph University of Beirut</p>
+              <ul class="bullets">
+                <li>Triaged SIEM/XDR alerts in the SOC, cutting incident response time by <b>20%</b> and mitigating <b>20+ critical threats</b>.</li>
+                <li>Streamlined security operations with Microsoft 365 Security and ITSM tools, improving team efficiency by <b>25%</b>.</li>
+                <li>Wrote incident reports and response playbooks documenting threats, root causes, and remediation steps.</li>
+              </ul>
+              <ul class="chips"><li>SIEM / XDR</li><li>Microsoft 365 Security</li><li>ITSM</li><li>Incident response</li></ul>
+            </div>
+            <div class="job-metrics">
+              <div><b>−20%</b><span>incident response time</span></div>
+              <div><b>20+</b><span>critical threats mitigated</span></div>
+              <div><b>+25%</b><span>team efficiency</span></div>
+            </div>
+          </li>
+        </ol>
+
+        <div class="edu reveal">
+          <div class="edu-main">
+            <span class="panel-id light">Education</span>
+            <h3>University of Ottawa</h3>
+            <p>Bachelor of Applied Science in Software Engineering (Co&#8209;op)</p>
+            <p class="edu-when">Sep 2023 – Dec 2027 · Ottawa, ON</p>
+          </div>
+          <div class="edu-stats">
+            <div><b>3.9<small>/4.0</small></b><span>GPA</span></div>
+            <div><b>Dean’s</b><span>List</span></div>
+          </div>
+          <div class="edu-courses">
+            <small>Relevant coursework</small>
+            <ul class="chips"><li>Data Structures</li><li>Algorithms</li><li>Software Architecture</li><li>Database Systems</li><li>Artificial Intelligence</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── PROJECTS ───────────── -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-no">§ 02</span>
+          <h2>Selected projects</h2>
           <p>Five builds, from a C++ hot path to a 13-agent pipeline. Two of them run right here on the page.</p>
         </header>
 
@@ -466,105 +565,6 @@
               <span class="ix-links"><a href="https://github.com/RodricDib06/Python_Project" target="_blank" rel="noopener">GitHub ↗</a></span>
             </li>
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ───────────── EXPERIENCE ───────────── -->
-    <section class="section" id="experience">
-      <div class="wrap">
-        <header class="sec-head reveal">
-          <span class="sec-no">§ 02</span>
-          <h2>Experience</h2>
-          <p>Four work terms across government software, enterprise ERP, and security operations.</p>
-        </header>
-
-        <ol class="timeline">
-          <li class="job reveal">
-            <div class="job-when">
-              <time>May – Aug 2026</time>
-              <span>Ottawa, ON</span>
-              <span class="job-tag">Co-op</span>
-            </div>
-            <div class="job-body">
-              <h3>Software Developer &amp; QA Co-op</h3>
-              <p class="job-org">Global Affairs Canada <i>·</i> Government of Canada</p>
-              <ul class="bullets">
-                <li>Shipped <b>10 features</b> in C#/.NET, TypeScript, JavaScript, and CSHTML for NEXCOL, a security-sensitive export-control system used by thousands of exporters, importers, and government users.</li>
-                <li>Built <b>30+ end-to-end test files</b> in Playwright, catching regressions before each release.</li>
-                <li>Debugged and fixed <b>15+ defects</b> across the front-end, business-logic, and SQL Server layers through root-cause analysis.</li>
-                <li>Worked in Agile sprints in Azure DevOps: planned and tracked work, and validated fixes with regression testing.</li>
-              </ul>
-              <ul class="chips"><li>C#</li><li>.NET</li><li>TypeScript</li><li>Playwright</li><li>SQL Server</li><li>Azure DevOps</li></ul>
-            </div>
-            <div class="job-metrics">
-              <div><b>10</b><span>features shipped</span></div>
-              <div><b>30+</b><span>E2E test files</span></div>
-              <div><b>15+</b><span>defects fixed</span></div>
-            </div>
-          </li>
-
-          <li class="job reveal">
-            <div class="job-when">
-              <time>Jan – Dec 2025</time>
-              <span>Ottawa, ON</span>
-              <span class="job-tag">2 co-op terms</span>
-            </div>
-            <div class="job-body">
-              <h3>Junior Technical Analyst</h3>
-              <p class="job-org">Hoist Tech</p>
-              <ul class="bullets">
-                <li><b>Automated 10 manual processes</b> with JavaScript, building custom projections and buttons in IFS Configuration.</li>
-                <li>Built SQL reports on IFS Cloud ERP data, improving data accuracy and supporting process optimization.</li>
-                <li>Migrated and cleaned client data into IFS Cloud, and tested configurations and version upgrades before release.</li>
-              </ul>
-              <ul class="chips"><li>JavaScript</li><li>SQL</li><li>IFS Cloud ERP</li><li>Data migration</li></ul>
-            </div>
-            <div class="job-metrics">
-              <div><b>10</b><span>processes automated</span></div>
-              <div><b>2</b><span>consecutive terms</span></div>
-            </div>
-          </li>
-
-          <li class="job reveal">
-            <div class="job-when">
-              <time>May – Aug 2024</time>
-              <span>Beirut, Lebanon</span>
-              <span class="job-tag">Internship</span>
-            </div>
-            <div class="job-body">
-              <h3>Cybersecurity Intern</h3>
-              <p class="job-org">Saint Joseph University of Beirut</p>
-              <ul class="bullets">
-                <li>Triaged SIEM/XDR alerts in the SOC, cutting incident response time by <b>20%</b> and mitigating <b>20+ critical threats</b>.</li>
-                <li>Streamlined security operations with Microsoft 365 Security and ITSM tools, improving team efficiency by <b>25%</b>.</li>
-                <li>Wrote incident reports and response playbooks documenting threats, root causes, and remediation steps.</li>
-              </ul>
-              <ul class="chips"><li>SIEM / XDR</li><li>Microsoft 365 Security</li><li>ITSM</li><li>Incident response</li></ul>
-            </div>
-            <div class="job-metrics">
-              <div><b>−20%</b><span>incident response time</span></div>
-              <div><b>20+</b><span>critical threats mitigated</span></div>
-              <div><b>+25%</b><span>team efficiency</span></div>
-            </div>
-          </li>
-        </ol>
-
-        <div class="edu reveal">
-          <div class="edu-main">
-            <span class="panel-id light">Education</span>
-            <h3>University of Ottawa</h3>
-            <p>Bachelor of Applied Science in Software Engineering (Co&#8209;op)</p>
-            <p class="edu-when">Sep 2023 – Dec 2027 · Ottawa, ON</p>
-          </div>
-          <div class="edu-stats">
-            <div><b>3.9<small>/4.0</small></b><span>GPA</span></div>
-            <div><b>Dean’s</b><span>List</span></div>
-          </div>
-          <div class="edu-courses">
-            <small>Relevant coursework</small>
-            <ul class="chips"><li>Data Structures</li><li>Algorithms</li><li>Software Architecture</li><li>Database Systems</li><li>Artificial Intelligence</li></ul>
-          </div>
         </div>
       </div>
     </section>

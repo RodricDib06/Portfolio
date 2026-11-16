@@ -713,8 +713,8 @@
     if (k && !isMac) k.textContent = 'Ctrl K';
 
     const commands = [
-      ['Go to Work', 'Section', () => go('#work')],
       ['Go to Experience', 'Section', () => go('#experience')],
+      ['Go to Projects', 'Section', () => go('#projects')],
       ['Go to Skills', 'Section', () => go('#skills')],
       ['Go to About', 'Section', () => go('#about')],
       ['Go to Contact', 'Section', () => go('#contact')],
